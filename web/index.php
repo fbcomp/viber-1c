@@ -475,7 +475,9 @@ function getConnectionDB()
 		die('no connection string');
 	}
 	;
-	$client = new MongoDB\Client($connectionString);
+	$client = new MongoDB\Client($connectionString [
+        'retryWrites' => 'myUsername'],
+	);
 	$DataBase = $client->$dbName;
 	
 	if (!$DataBase) return die('no db connection');
