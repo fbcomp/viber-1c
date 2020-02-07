@@ -476,7 +476,7 @@ function getConnectionDB()
 	}
 	;
 	$client = new MongoDB\Client($connectionString,[
-        'retryWrites' => 'true',
+        'retryWrites' => 'false',
        ]);
 	$DataBase = $client->$dbName;
 	
